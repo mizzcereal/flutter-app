@@ -68,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
               text : "공지사항"
           ),
           Tab(
-              icon : Icon(Icons.person),
+              icon : Image.asset('assets/icon2.png'),
               text : "직업소개"
           ),
           Tab(

@@ -57,22 +57,23 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
       body: Container(),
       bottomNavigationBar: TabBar(
         controller: _tabController,
+        labelColor: Colors.black, //네비게이션바 아이콘, 글씨 색깔
         tabs: [
           Tab(
-            icon : Icon(Icons.person),
-            text : "Friends"
+            icon : Icon(Icons.home),
+            text : "홈페이지"
+          ),
+          Tab(
+              icon : Icon(Icons.assignment_turned_in),
+              text : "공지사항"
           ),
           Tab(
               icon : Icon(Icons.person),
-              text : "Friends"
+              text : "직업소개"
           ),
           Tab(
-              icon : Icon(Icons.person),
-              text : "Friends"
-          ),
-          Tab(
-              icon : Icon(Icons.person),
-              text : "Friends"
+              icon : Icon(Icons.question_answer),
+              text : "커뮤니티"
           ),
         ],
       ),

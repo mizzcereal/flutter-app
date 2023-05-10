@@ -93,7 +93,7 @@ class MyApp extends StatelessWidget {
                   ListView(
                     children: [
                       ListTile(
-                        title: Text('공지사항 562'),
+                        title: Text('공지사항 500'),
                         subtitle: Text('2023-05-01'),
                       ),
                       ListTile(

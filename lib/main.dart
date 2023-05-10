@@ -72,7 +72,7 @@ class MyApp extends StatelessWidget {
                         // 버튼 위젯 추가
                         InkWell(
                           onTap: () {
-                            launch('https://www.example.com/');
+                            launch('https://maplestory.nexon.com/Home/Main');
                           },
                           child: Container(
                             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),

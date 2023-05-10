@@ -11,11 +11,38 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'N.G 게임소개사이트',
+        home : DefaultTabController(
+          length : 4,
+          child : Scaffold(
+            appBar : AppBar(
+              bottom : TabBar(
+                tabs: [
+                  Tab(
+                      icon : Icon(Icons.home),
+                      text : "홈페이지"
+                  ),
+                  Tab(
+                      icon : Icon(Icons.assignment_turned_in),
+                      text : "공지사항"
+                  ),
+                  Tab(
+                      icon : Image.asset('images/icon2.png', width: 45, height: 25,),
+                      text : "직업소개"
+                  ),
+                  Tab(
+                      icon : Icon(Icons.question_answer),
+                      text : "커뮤니티"
+                  ),
+                ],
+              ),
+              title : Text("N.G"),
+            )
+          )
+        ),
+        title: 'N.G',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const MyHomePage(title: 'N.G')
     );
   }
 }

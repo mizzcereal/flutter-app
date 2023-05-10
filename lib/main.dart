@@ -65,7 +65,7 @@ class MyApp extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          '첫 번째 탭 화면',
+                          '컴터랑 두개 왤캐 어렵지',
                           style: TextStyle(fontSize: 24),
                         ),
                         SizedBox(height: 20),

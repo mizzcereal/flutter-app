@@ -1,109 +1,54 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MyApp()); //프로그램 실행시 MyApp부터 실행
 }
-
+// 변하지 않는 화면 작업 시 사용
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
 
+//MaterialApp = 앱으로서 기능을 할 수 있도록 도와주는 뼈대
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home : DefaultTabController(
+      home : DefaultTabController(
+          initialIndex: 1,
           length : 4,
           child : Scaffold(
-            appBar : AppBar(
-              bottom : TabBar(
-                tabs: [
-                  Tab(
-                      icon : Icon(Icons.home),
-                      text : "홈페이지"
-                  ),
-                  Tab(
-                      icon : Icon(Icons.assignment_turned_in),
-                      text : "공지사항"
-                  ),
-                  Tab(
-                      icon : Image.asset('images/icon2.png', width: 45, height: 25,),
-                      text : "직업소개"
-                  ),
-                  Tab(
-                      icon : Icon(Icons.question_answer),
-                      text : "커뮤니티"
-                  ),
-                ],
-              ),
-              title : Text("N.G"),
-            )
+              appBar : AppBar(
+                bottom : TabBar(
+                  tabs: [
+                    Tab(
+                        icon : Icon(Icons.home),
+                        text : "홈페이지"
+                    ),
+                    Tab(
+                        icon : Icon(Icons.assignment_turned_in),
+                        text : "공지사항"
+                    ),
+                    Tab(
+                        icon : Image.asset('images/icon2.png', width: 45, height: 25,),
+                        text : "직업소개"
+                    ),
+                    Tab(
+                        icon : Icon(Icons.question_answer),
+                        text : "커뮤니티"
+                    ),
+                  ],
+                  indicatorColor: Colors.transparent,
+                  unselectedLabelColor: Colors.grey,
+                  labelColor: Colors.black,
+                ),
+                title : Text("N.G"),
+                centerTitle: true,
+              )
           )
-        ),
-        title: 'N.G',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateMixin{ //Single.. 이게 있어야 애니메이션 기능들을 할 수 있음
-  late TabController _tabController;
-  int _selectedIndex = 0;
-
-  @override
-  void initState() {
-    super.initState();
-    _tabController = TabController(length: 3, vsync: this);
-    _tabController.addListener(() {
-      () => setState(() => _selectedIndex = _tabController.index);
-    });
-  }
-
-  @override
-  void dispose() {
-    _tabController.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Center(child: Text(widget.title)), // N.G 중앙으로 오게함
       ),
-      body: Container(),
-      bottomNavigationBar: TabBar(
-        controller: _tabController,
-        labelColor: Colors.black, //네비게이션바 아이콘, 글씨 색깔
-        tabs: [
-          Tab(
-            icon : Icon(Icons.home),
-            text : "홈페이지"
-          ),
-          Tab(
-              icon : Icon(Icons.assignment_turned_in),
-              text : "공지사항"
-          ),
-          Tab(
-              icon : Image.asset('images/icon2.png', width: 45, height: 25,),
-              text : "직업소개"
-          ),
-          Tab(
-              icon : Icon(Icons.question_answer),
-              text : "커뮤니티"
-          ),
-        ],
+      title: 'N.G',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
     );
-    }
+  }
 }

@@ -107,8 +107,41 @@ class MyApp extends StatelessWidget {
                     ],
                   ),
                   // 세 번째 탭에 대한 화면
-                  Center(
-                    child: Text('세 번째 탭 화면'),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        width: 150,
+                        height: 150,
+                        color: Colors.red,
+                      ),
+                      SizedBox(width: 20),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            width: 500,
+                            height: 1000,
+                            decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                '파란색 박스',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                   // 네 번째 탭에 대한 화면
                   Center(

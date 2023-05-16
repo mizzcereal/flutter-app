@@ -111,15 +111,16 @@ class MyApp extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Expanded(
-                        flex: 1,
+                        flex: 3,
                         child: Container(
                           width: 100,
                           height: 150,
                           color: Colors.red,
                         ),
+
                       ),
                       Expanded(
-                        flex: 1,
+                        flex: 3,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -159,4 +160,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

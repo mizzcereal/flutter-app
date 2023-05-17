@@ -65,7 +65,7 @@ class MyApp extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          '첫 번째 탭 화면',
+                          '컴터랑 두개 왤캐 어렵지!!!',
                           style: TextStyle(fontSize: 24),
                         ),
                         SizedBox(height: 20),
@@ -93,7 +93,7 @@ class MyApp extends StatelessWidget {
                   ListView(
                     children: [
                       ListTile(
-                        title: Text('공지사항 562'),
+                        title: Text('공지사항 500'),
                         subtitle: Text('2023-05-01'),
                       ),
                       ListTile(
@@ -107,8 +107,60 @@ class MyApp extends StatelessWidget {
                     ],
                   ),
                   // 세 번째 탭에 대한 화면
-                  Center(
-                    child: Text('세 번째 탭 화면'),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Expanded(
+                        flex: 3,
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              width: 100,
+                              height: 150,
+                              color: Colors.red,
+                            ),
+                            Container(
+                              width: 200,
+                              height: 200,
+                              color: Colors.red,
+                            ),
+                          ],
+                        ),
+                      ),
+                      Expanded(
+                        flex: 3,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              width: 650,
+                              height: 1000,
+                              decoration: BoxDecoration(
+                                color: Colors.blue,
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  '파란색 박스',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                            Container(
+                              width: 250,
+                              height: 150,
+                              color: Colors.red,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                   // 네 번째 탭에 대한 화면
                   Center(
@@ -122,4 +174,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

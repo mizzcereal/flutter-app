@@ -112,12 +112,21 @@ class MyApp extends StatelessWidget {
                     children: [
                       Expanded(
                         flex: 3,
-                        child: Container(
-                          width: 100,
-                          height: 150,
-                          color: Colors.red,
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              width: 200,
+                              height: 100,
+                              color: Colors.red,
+                            ),
+                            SizedBox(height: 30),
+                            Container(
+                              width: 200,
+                              height: 100,
+                              color: Colors.red,
+                            ),
+                          ],
                         ),
-
                       ),
                       Expanded(
                         flex: 3,
@@ -142,6 +151,12 @@ class MyApp extends StatelessWidget {
                                   ),
                                 ),
                               ),
+                            ),
+                            SizedBox(height: 20),
+                            Container(
+                              width: 250,
+                              height: 150,
+                              color: Colors.red,
                             ),
                           ],
                         ),

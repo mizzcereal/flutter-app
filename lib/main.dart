@@ -19,39 +19,41 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home : DefaultTabController(
+      home: DefaultTabController(
           initialIndex: 1,
-          length : 4,
-          child : Scaffold(
-            appBar : AppBar(
-              bottom : TabBar(
+          length: 4,
+          child: Scaffold(
+            appBar: AppBar(
+              bottom: TabBar(
                 tabs: [
                   Tab(
-                      icon : Icon(Icons.home),
-                      text : "홈페이지"
+                      icon: Icon(Icons.home),
+                      text: "홈페이지"
                   ),
                   Tab(
-                      icon : Icon(Icons.assignment_turned_in),
-                      text : "공지사항"
+                      icon: Icon(Icons.assignment_turned_in),
+                      text: "공지사항"
                   ),
                   Tab(
-                      icon : Image.asset('images/icon2.png', width: 45, height: 25,),
-                      text : "직업소개"
+                      icon: Image.asset(
+                        'images/icon2.png', width: 45, height: 25,),
+                      text: "직업소개"
                   ),
                   Tab(
-                      icon : Icon(Icons.question_answer),
-                      text : "커뮤니티"
+                      icon: Icon(Icons.question_answer),
+                      text: "커뮤니티"
                   ),
                 ],
                 indicatorColor: Colors.transparent,
                 unselectedLabelColor: Color(0xFFDDDDDD),
                 labelColor: Colors.black,
               ),
-              title : Text("N.G"),
+              title: Text("N.G"),
               centerTitle: true,
             ),
             body: NestedScrollView(
-              headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+              headerSliverBuilder: (BuildContext context,
+                  bool innerBoxIsScrolled) {
                 return <Widget>[
                   // 여기서 SliverAppBar 위젯을 추가할 수 있습니다.
                 ];
@@ -75,14 +77,16 @@ class MyApp extends StatelessWidget {
                             launch('https://maplestory.nexon.com/Home/Main');
                           },
                           child: Container(
-                            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                            padding: EdgeInsets.symmetric(horizontal: 20,
+                                vertical: 10),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(8),
                               color: Colors.blue,
                             ),
                             child: Text(
                               '다른 사이트로 이동',
-                              style: TextStyle(color: Colors.white, fontSize: 18),
+                              style: TextStyle(
+                                  color: Colors.white, fontSize: 18),
                             ),
                           ),
                         ),
@@ -107,61 +111,57 @@ class MyApp extends StatelessWidget {
                     ],
                   ),
                   // 세 번째 탭에 대한 화면
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Expanded(
-                        flex: 3,
-                        child: Column(
-                          children: <Widget>[
-                            Container(
-                              width: 200,
-                              height: 100,
-                              color: Colors.red,
-                            ),
-                            SizedBox(height: 30),
-                            Container(
-                              width: 200,
-                              height: 100,
-                              color: Colors.red,
-                            ),
-                          ],
-                        ),
-                      ),
-                      Expanded(
-                        flex: 3,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              width: 650,
-                              height: 1000,
-                              decoration: BoxDecoration(
-                                color: Colors.blue,
-                                borderRadius: BorderRadius.circular(5),
+                  SingleChildScrollView(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Expanded(
+                          flex: 3,
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                width: 200,
+                                height: 100,
+                                color: Colors.red,
                               ),
-                              child: Align(
-                                alignment: Alignment.center,
-                                child: Text(
-                                  '파란색 박스',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
+                              SizedBox(height: 30),
+                              Container(
+                                width: 200,
+                                height: 100,
+                                color: Colors.red,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Expanded(
+                          flex: 3,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                width: 400,
+                                height: 600,
+                                decoration: BoxDecoration(
+                                  color: Colors.blue,
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: Text(
+                                    '파란색 박스',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                            SizedBox(height: 20),
-                            Container(
-                              width: 250,
-                              height: 150,
-                              color: Colors.red,
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                   // 네 번째 탭에 대한 화면
                   Center(

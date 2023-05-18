@@ -112,9 +112,8 @@ class MyApp extends StatelessWidget {
                     ],
                   ),
                   // 세 번째 탭에 대한 화면
-                  SingleChildScrollView(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Expanded(
                           flex: 3,
@@ -136,7 +135,8 @@ class MyApp extends StatelessWidget {
                         ),
                         Expanded(
                           flex: 3,
-                          child: Column(
+                          child: SingleChildScrollView(
+                            child : Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -161,9 +161,9 @@ class MyApp extends StatelessWidget {
                             ],
                           ),
                         ),
+                        ),
                       ],
                     ),
-                  ),
                   // 네 번째 탭에 대한 화면
                   Center(
                     child: Text('네 번째 탭 화면'),

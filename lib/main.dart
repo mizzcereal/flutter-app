@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+
 void main() {
-  SystemChrome.setSystemUIOverlayStyle(
-      SystemUiOverlayStyle(statusBarColor: Color(0xFFF9F9F9)));
-  runApp(const MyApp()); // 프로그램 실행시 MyApp부터 실행
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -62,20 +61,21 @@ class MyApp extends StatelessWidget {
 }
 
 class _MyAppBody extends StatefulWidget {
+  const _MyAppBody({Key? key}) : super(key: key);
+
   @override
   _MyAppBodyState createState() => _MyAppBodyState();
 }
 
 class _MyAppBodyState extends State<_MyAppBody> {
-  bool showBlueBox = true;
+  bool showBlueBox1 = false;
+  bool showBlueBox2 = false;
 
   @override
   Widget build(BuildContext context) {
     return NestedScrollView(
       headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-        return <Widget>[
-          // 여기서 SliverAppBar 위젯을 추가할 수 있습니다.
-        ];
+        return <Widget>[];
       },
       body: TabBarView(
         children: [
@@ -131,7 +131,7 @@ class _MyAppBodyState extends State<_MyAppBody> {
           GestureDetector(
             onTap: () {
               setState(() {
-                showBlueBox = !showBlueBox;
+                showBlueBox1 = !showBlueBox1;
               });
             },
             child: Row(
@@ -141,16 +141,30 @@ class _MyAppBodyState extends State<_MyAppBody> {
                   flex: 3,
                   child: Column(
                     children: <Widget>[
-                      Container(
-                        width: 200,
-                        height: 100,
-                        color: Colors.red,
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            showBlueBox1 = !showBlueBox1;
+                          });
+                        },
+                        child: Container(
+                          width: 200,
+                          height: 100,
+                          color: Colors.red,
+                        ),
                       ),
                       SizedBox(height: 30),
-                      Container(
-                        width: 200,
-                        height: 100,
-                        color: Colors.red,
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            showBlueBox2 = !showBlueBox2;
+                          });
+                        },
+                        child: Container(
+                          width: 200,
+                          height: 100,
+                          color: Colors.red,
+                        ),
                       ),
                     ],
                   ),
@@ -162,7 +176,8 @@ class _MyAppBodyState extends State<_MyAppBody> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        if (showBlueBox) _buildBlueBox(),
+                        if (showBlueBox1) _buildBlueBox1(),
+                        if (showBlueBox2) _buildBlueBox2(),
                       ],
                     ),
                   ),
@@ -178,7 +193,7 @@ class _MyAppBodyState extends State<_MyAppBody> {
     );
   }
 
-  Widget _buildBlueBox() {
+  Widget _buildBlueBox1() {
     return Container(
       width: 400,
       height: 600,
@@ -189,7 +204,28 @@ class _MyAppBodyState extends State<_MyAppBody> {
       child: Align(
         alignment: Alignment.center,
         child: Text(
-          '파란색 박스',
+          '첫 번째 파란색 박스',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildBlueBox2() {
+    return Container(
+      width: 400,
+      height: 600,
+      decoration: BoxDecoration(
+        color: Colors.green,
+        borderRadius: BorderRadius.circular(5),
+      ),
+      child: Align(
+        alignment: Alignment.center,
+        child: Text(
+          '두 번째 파란색 박스',
           style: TextStyle(
             color: Colors.white,
             fontSize: 20,

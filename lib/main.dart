@@ -152,7 +152,26 @@ class _MyAppBodyState extends State<_MyAppBody> {
                         child: Container(
                           width: 200,
                           height: 100,
-                          color: Colors.red,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            border: Border.all(
+                              color: Colors.black,
+                              width: 2,
+                            ),
+                            image: DecorationImage(
+                              image: AssetImage('images/ad_war.png'),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: Text(
+                              '모험가 전사',
+                              style: TextStyle(
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
                         ),
                       ),
                       SizedBox(height: 30),
@@ -163,18 +182,27 @@ class _MyAppBodyState extends State<_MyAppBody> {
                           });
                         },
                         child: Container(
-                          child : Text('모험가 전사',
-                          style: TextStyle(
-                            color :
-                          ),),
                           width: 200,
                           height: 100,
-                          color: Colors.red,
                           decoration: BoxDecoration(
-                            image : DecorationImage(
-                              image : AssetImage(
-                              )
-                            )
+                            borderRadius: BorderRadius.circular(5),
+                            border: Border.all(
+                              color: Colors.black,
+                              width: 2,
+                            ),
+                            image: DecorationImage(
+                              image: AssetImage('images/ad_war.png'),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: Text(
+                              '모험가 전사',
+                              style: TextStyle(
+                                color: Colors.black,
+                              ),
+                            ),
                           ),
                         ),
                       ),

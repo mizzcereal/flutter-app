@@ -3,8 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
-  SystemChrome.setSystemUIOverlayStyle(
-      SystemUiOverlayStyle(statusBarColor: Color(0xFFF9F9F9)));
   runApp(const MyApp());
 }
 
@@ -54,158 +52,140 @@ class MyApp extends StatelessWidget {
             title: Text("N.G"),
             centerTitle: true,
           ),
-          body: TabBarView(
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      '컴터랑 두개 왤캐 어렵지!!!',
-                      style: TextStyle(fontSize: 24),
-                    ),
-                    SizedBox(height: 20),
-                    InkWell(
-                      onTap: () {
-                        launch('https://maplestory.nexon.com/Home/Main');
-                      },
-                      child: Container(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 20, vertical: 10),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          color: Colors.blue,
-                        ),
-                        child: Text(
-                          '다른 사이트로 이동',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              ListView(
-                children: [
-                  ListTile(
-                    title: Text('공지사항 500'),
-                    subtitle: Text('2023-05-01'),
-                  ),
-                  ListTile(
-                    title: Text('공지사항 2'),
-                    subtitle: Text('2023-05-02'),
-                  ),
-                  ListTile(
-                    title: Text('공지사항 4'),
-                    subtitle: Text('2023-05-03'),
-                  ),
-                ],
-              ),
-              _JobIntroductionTab(),
-              _CommunityTab(),
-            ],
-          ),
+          body: _MyAppBody(),
         ),
       ),
     );
   }
 }
 
-class _JobIntroductionTab extends StatefulWidget {
-  const _JobIntroductionTab({Key? key}) : super(key: key);
+class _MyAppBody extends StatefulWidget {
+  const _MyAppBody({Key? key}) : super(key: key);
 
   @override
-  __JobIntroductionTabState createState() => __JobIntroductionTabState();
+  _MyAppBodyState createState() => _MyAppBodyState();
 }
 
-class __JobIntroductionTabState extends State<_JobIntroductionTab> {
-  bool showBlueBox = false;
+class _MyAppBodyState extends State<_MyAppBody> {
+  List<bool> showBlueBoxList = List<bool>.generate(14, (index) => false);
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
+    return NestedScrollView(
+      headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+        return <Widget>[
+          // 여기서 SliverAppBar 위젯을 추가할 수 있습니다.
+        ];
+      },
+      body: TabBarView(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                flex: 3,
-                child: Column(
-                  children: <Widget>[
-                    GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          showBlueBox = !showBlueBox;
-                        });
-                      },
-                      child: Container(
-                        margin: EdgeInsets.all(10),
-                        width: 200,
-                        height: 100,
-                        color: Colors.red,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  '컴터랑 두개 왤캐 어렵지!!!',
+                  style: TextStyle(fontSize: 24),
+                ),
+                SizedBox(height: 20),
+                InkWell(
+                  onTap: () {
+                    launch('https://maplestory.nexon.com/Home/Main');
+                  },
+                  child: Container(
+                    padding:
+                    EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: Colors.blue,
+                    ),
+                    child: Text(
+                      '다른 사이트로 이동',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
                       ),
                     ),
-                    SizedBox(height: 30),
-                    Container(
-                      margin: EdgeInsets.all(10),
-                      width: 200,
-                      height: 100,
-                      color: Colors.red,
-                    ),
-                  ],
-                ),
-              ),
-              Expanded(
-                flex: 3,
-                child: SingleChildScrollView(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      if (showBlueBox)
-                        Container(
-                          margin: EdgeInsets.all(10),
-                          width: 400,
-                          height: 600,
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(5),
-                          ),
-                          child: Align(
-                            alignment: Alignment.center,
-                            child: Text(
-                              '파란색 박스',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                              ),
-                            ),
-                          ),
-                        ),
-                    ],
                   ),
                 ),
+              ],
+            ),
+          ),
+          ListView(
+            children: [
+              ListTile(
+                title: Text('공지사항 500'),
+                subtitle: Text('2023-05-01'),
+              ),
+              ListTile(
+                title: Text('공지사항 2'),
+                subtitle: Text('2023-05-02'),
+              ),
+              ListTile(
+                title: Text('공지사항 4'),
+                subtitle: Text('2023-05-03'),
               ),
             ],
+          ),
+          SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: List.generate(14, (index) {
+                return GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      showBlueBoxList[index] = !showBlueBoxList[index];
+                    });
+                  },
+                  child: Container(
+                    margin: EdgeInsets.symmetric(vertical: 10),
+                    width: 200,
+                    height: 100,
+                    color: Colors.red,
+                  ),
+                );
+              }),
+            ),
+          ),
+          SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: List.generate(14, (index) {
+                if (showBlueBoxList[index]) {
+                  return _buildBlueBox(index + 1);
+                } else {
+                  return Container();
+                }
+              }),
+            ),
           ),
         ],
       ),
     );
   }
-}
 
-class _CommunityTab extends StatelessWidget {
-  const _CommunityTab({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text('커뮤니티 탭 화면'),
+  Widget _buildBlueBox(int boxNumber) {
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 10),
+      width: 400,
+      height: 600,
+      decoration: BoxDecoration(
+        color: Colors.blue,
+        borderRadius: BorderRadius.circular(5),
+      ),
+      child: Align(
+        alignment: Alignment.center,
+        child: Text(
+          '파란색 박스 $boxNumber',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+          ),
+        ),
+      ),
     );
   }
 }

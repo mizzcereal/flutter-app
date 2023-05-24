@@ -69,6 +69,7 @@ class _MyAppBody extends StatefulWidget {
 class _MyAppBodyState extends State<_MyAppBody> {
   bool showBlueBox1 = false;
   bool showBlueBox2 = false;
+  bool showBlueBox3 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -162,11 +163,35 @@ class _MyAppBodyState extends State<_MyAppBody> {
                           });
                         },
                         child: Container(
+                          child : Text('모험가 전사',
+                          style: TextStyle(
+                            color :
+                          ),),
+                          width: 200,
+                          height: 100,
+                          color: Colors.red,
+                          decoration: BoxDecoration(
+                            image : DecorationImage(
+                              image : AssetImage(
+                              )
+                            )
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 30),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            showBlueBox3 = !showBlueBox3;
+                          });
+                        },
+                        child: Container(
                           width: 200,
                           height: 100,
                           color: Colors.red,
                         ),
                       ),
+                      SizedBox(height: 30),
                     ],
                   ),
                 ),
@@ -179,9 +204,11 @@ class _MyAppBodyState extends State<_MyAppBody> {
                       children: [
                         if (showBlueBox1) _buildBlueBox1(),
                         if (showBlueBox2) _buildBlueBox2(),
+                        if (showBlueBox3) _buildBlueBox3(),
                       ],
                     ),
                   ),
+
                 ),
               ],
             ),
@@ -227,6 +254,27 @@ class _MyAppBodyState extends State<_MyAppBody> {
         alignment: Alignment.center,
         child: Text(
           '두 번째 파란색 박스',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildBlueBox3() {
+    return Container(
+      width: 400,
+      height: 600,
+      decoration: BoxDecoration(
+        color: Colors.black,
+        borderRadius: BorderRadius.circular(5),
+      ),
+      child: Align(
+        alignment: Alignment.center,
+        child: Text(
+          '세 번째 파란색 박스',
           style: TextStyle(
             color: Colors.white,
             fontSize: 20,

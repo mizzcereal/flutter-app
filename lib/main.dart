@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(statusBarColor: Color(0xFFF9F9F9)));
   runApp(const MyApp());
 }
 
@@ -53,185 +54,158 @@ class MyApp extends StatelessWidget {
             title: Text("N.G"),
             centerTitle: true,
           ),
-          body: _MyAppBody(),
+          body: TabBarView(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      '컴터랑 두개 왤캐 어렵지!!!',
+                      style: TextStyle(fontSize: 24),
+                    ),
+                    SizedBox(height: 20),
+                    InkWell(
+                      onTap: () {
+                        launch('https://maplestory.nexon.com/Home/Main');
+                      },
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 10),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: Colors.blue,
+                        ),
+                        child: Text(
+                          '다른 사이트로 이동',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              ListView(
+                children: [
+                  ListTile(
+                    title: Text('공지사항 500'),
+                    subtitle: Text('2023-05-01'),
+                  ),
+                  ListTile(
+                    title: Text('공지사항 2'),
+                    subtitle: Text('2023-05-02'),
+                  ),
+                  ListTile(
+                    title: Text('공지사항 4'),
+                    subtitle: Text('2023-05-03'),
+                  ),
+                ],
+              ),
+              _JobIntroductionTab(),
+              _CommunityTab(),
+            ],
+          ),
         ),
       ),
     );
   }
 }
 
-class _MyAppBody extends StatefulWidget {
-  const _MyAppBody({Key? key}) : super(key: key);
+class _JobIntroductionTab extends StatefulWidget {
+  const _JobIntroductionTab({Key? key}) : super(key: key);
 
   @override
-  _MyAppBodyState createState() => _MyAppBodyState();
+  __JobIntroductionTabState createState() => __JobIntroductionTabState();
 }
 
-class _MyAppBodyState extends State<_MyAppBody> {
-  bool showBlueBox1 = false;
-  bool showBlueBox2 = false;
+class __JobIntroductionTabState extends State<_JobIntroductionTab> {
+  bool showBlueBox = false;
 
   @override
   Widget build(BuildContext context) {
-    return NestedScrollView(
-      headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-        return <Widget>[];
-      },
-      body: TabBarView(
+    return SingleChildScrollView(
+      child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  '컴터랑 두개 왤캐 어렵지!!!',
-                  style: TextStyle(fontSize: 24),
-                ),
-                SizedBox(height: 20),
-                InkWell(
-                  onTap: () {
-                    launch('https://maplestory.nexon.com/Home/Main');
-                  },
-                  child: Container(
-                    padding:
-                    EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: Colors.blue,
-                    ),
-                    child: Text(
-                      '다른 사이트로 이동',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          ListView(
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              ListTile(
-                title: Text('공지사항 500'),
-                subtitle: Text('2023-05-01'),
+              Expanded(
+                flex: 3,
+                child: Column(
+                  children: <Widget>[
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          showBlueBox = !showBlueBox;
+                        });
+                      },
+                      child: Container(
+                        margin: EdgeInsets.all(10),
+                        width: 200,
+                        height: 100,
+                        color: Colors.red,
+                      ),
+                    ),
+                    SizedBox(height: 30),
+                    Container(
+                      margin: EdgeInsets.all(10),
+                      width: 200,
+                      height: 100,
+                      color: Colors.red,
+                    ),
+                  ],
+                ),
               ),
-              ListTile(
-                title: Text('공지사항 2'),
-                subtitle: Text('2023-05-02'),
-              ),
-              ListTile(
-                title: Text('공지사항 4'),
-                subtitle: Text('2023-05-03'),
-              ),
-            ],
-          ),
-          GestureDetector(
-            onTap: () {
-              setState(() {
-                showBlueBox1 = !showBlueBox1;
-              });
-            },
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  flex: 3,
+              Expanded(
+                flex: 3,
+                child: SingleChildScrollView(
                   child: Column(
-                    children: <Widget>[
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            showBlueBox1 = !showBlueBox1;
-                          });
-                        },
-                        child: Container(
-                          width: 200,
-                          height: 100,
-                          color: Colors.red,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      if (showBlueBox)
+                        Container(
+                          margin: EdgeInsets.all(10),
+                          width: 400,
+                          height: 600,
+                          decoration: BoxDecoration(
+                            color: Colors.blue,
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: Text(
+                              '파란색 박스',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 30),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            showBlueBox2 = !showBlueBox2;
-                          });
-                        },
-                        child: Container(
-                          width: 200,
-                          height: 100,
-                          color: Colors.red,
-                        ),
-                      ),
                     ],
                   ),
                 ),
-                Expanded(
-                  flex: 3,
-                  child: SingleChildScrollView(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        if (showBlueBox1) _buildBlueBox1(),
-                        if (showBlueBox2) _buildBlueBox2(),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Center(
-            child: Text('네 번째 탭 화면'),
+              ),
+            ],
           ),
         ],
       ),
     );
   }
+}
 
-  Widget _buildBlueBox1() {
-    return Container(
-      width: 400,
-      height: 600,
-      decoration: BoxDecoration(
-        color: Colors.blue,
-        borderRadius: BorderRadius.circular(5),
-      ),
-      child: Align(
-        alignment: Alignment.center,
-        child: Text(
-          '첫 번째 파란색 박스',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-          ),
-        ),
-      ),
-    );
-  }
+class _CommunityTab extends StatelessWidget {
+  const _CommunityTab({Key? key}) : super(key: key);
 
-  Widget _buildBlueBox2() {
-    return Container(
-      width: 400,
-      height: 600,
-      decoration: BoxDecoration(
-        color: Colors.green,
-        borderRadius: BorderRadius.circular(5),
-      ),
-      child: Align(
-        alignment: Alignment.center,
-        child: Text(
-          '두 번째 파란색 박스',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-          ),
-        ),
-      ),
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text('커뮤니티 탭 화면'),
     );
   }
 }

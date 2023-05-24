@@ -67,7 +67,8 @@ class _MyAppBody extends StatefulWidget {
 }
 
 class _MyAppBodyState extends State<_MyAppBody> {
-  List<bool> showBlueBoxList = List<bool>.generate(14, (index) => false);
+  bool showBlueBox1 = false;
+  bool showBlueBox2 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -128,48 +129,73 @@ class _MyAppBodyState extends State<_MyAppBody> {
               ),
             ],
           ),
-          SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: List.generate(14, (index) {
-                return GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      showBlueBoxList[index] = !showBlueBoxList[index];
-                    });
-                  },
-                  child: Container(
-                    margin: EdgeInsets.symmetric(vertical: 10),
-                    width: 200,
-                    height: 100,
-                    color: Colors.red,
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                showBlueBox1 = !showBlueBox1;
+              });
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  flex: 3,
+                  child: Column(
+                    children: <Widget>[
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            showBlueBox1 = !showBlueBox1;
+                          });
+                        },
+                        child: Container(
+                          width: 200,
+                          height: 100,
+                          color: Colors.red,
+                        ),
+                      ),
+                      SizedBox(height: 30),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            showBlueBox2 = !showBlueBox2;
+                          });
+                        },
+                        child: Container(
+                          width: 200,
+                          height: 100,
+                          color: Colors.red,
+                        ),
+                      ),
+                    ],
                   ),
-                );
-              }),
+                ),
+                Expanded(
+                  flex: 3,
+                  child: SingleChildScrollView(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        if (showBlueBox1) _buildBlueBox1(),
+                        if (showBlueBox2) _buildBlueBox2(),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
-          SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: List.generate(14, (index) {
-                if (showBlueBoxList[index]) {
-                  return _buildBlueBox(index + 1);
-                } else {
-                  return Container();
-                }
-              }),
-            ),
+          Center(
+            child: Text('네 번째 탭 화면'),
           ),
         ],
       ),
     );
   }
 
-  Widget _buildBlueBox(int boxNumber) {
+  Widget _buildBlueBox1() {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
       width: 400,
       height: 600,
       decoration: BoxDecoration(
@@ -179,7 +205,28 @@ class _MyAppBodyState extends State<_MyAppBody> {
       child: Align(
         alignment: Alignment.center,
         child: Text(
-          '파란색 박스 $boxNumber',
+          '첫 번째 파란색 박스',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildBlueBox2() {
+    return Container(
+      width: 400,
+      height: 600,
+      decoration: BoxDecoration(
+        color: Colors.green,
+        borderRadius: BorderRadius.circular(5),
+      ),
+      child: Align(
+        alignment: Alignment.center,
+        child: Text(
+          '두 번째 파란색 박스',
           style: TextStyle(
             color: Colors.white,
             fontSize: 20,

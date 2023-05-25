@@ -68,16 +68,12 @@ class _MyAppBody extends StatefulWidget {
 }
 
 class _MyAppBodyState extends State<_MyAppBody> {
-  bool showBlueBox1 = false;
-  bool showBlueBox2 = false;
-  bool showBlueBox3 = false;
 
   @override
   Widget build(BuildContext context) {
     return NestedScrollView(
       headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-        return <Widget>[
-        ];
+        return <Widget>[];
       },
       body: TabBarView(
         children: [
@@ -130,7 +126,7 @@ class _MyAppBodyState extends State<_MyAppBody> {
               ),
             ],
           ),
-          JobTab(), // job_tab.dart에서 임포트한 위젯을 추가합니다.
+          JobTab(),
           Center(
             child: Text('네 번째 탭 화면'),
           ),

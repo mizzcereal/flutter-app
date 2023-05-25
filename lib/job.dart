@@ -9,6 +9,7 @@ class _JobTabState extends State<JobTab> {
   bool showBlueBox1 = false;
   bool showBlueBox2 = false;
   bool showBlueBox3 = false;
+  bool showBlueBox4 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -102,6 +103,38 @@ class _JobTabState extends State<JobTab> {
                   ),
                 ),
                 SizedBox(height: 30),
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      showBlueBox4 = !showBlueBox4;
+                    });
+                  },
+                  child: Container(
+                    width: 200,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      border: Border.all(
+                        color: Colors.black,
+                        width: 2,
+                      ),
+                      image: DecorationImage(
+                        image: AssetImage('images/ad_war.png'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        '모험가 전사',
+                        style: TextStyle(
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 30),
               ],
             ),
           ),
@@ -115,6 +148,7 @@ class _JobTabState extends State<JobTab> {
                   if (showBlueBox1) _buildBlueBox1(),
                   if (showBlueBox2) _buildBlueBox2(),
                   if (showBlueBox3) _buildBlueBox3(),
+                  if (showBlueBox4) _buildBlueBox4(),
                 ],
               ),
             ),
@@ -186,4 +220,25 @@ class _JobTabState extends State<JobTab> {
       ),
     );
   }
+}
+
+Widget _buildBlueBox4() {
+  return Container(
+    width: 400,
+    height: 600,
+    decoration: BoxDecoration(
+      color: Colors.black,
+      borderRadius: BorderRadius.circular(5),
+    ),
+    child: Align(
+      alignment: Alignment.center,
+      child: Text(
+        '세 번째 파란색 박스',
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 20,
+        ),
+      ),
+    ),
+  );
 }

@@ -76,7 +76,6 @@ class _MyAppBodyState extends State<_MyAppBody> {
     return NestedScrollView(
       headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
         return <Widget>[
-          // 여기서 SliverAppBar 위젯을 추가할 수 있습니다.
         ];
       },
       body: TabBarView(

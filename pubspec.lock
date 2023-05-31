@@ -25,14 +25,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.1"
-  charcode:
-    dependency: transitive
-    description:
-      name: charcode
-      sha256: fb98c0f6d12c920a02ee2d998da788bca066ca5f148492b7085ee23372b12306
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.3.1"
   clock:
     dependency: transitive
     description:
@@ -49,22 +41,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.17.0"
-  convert:
-    dependency: transitive
-    description:
-      name: convert
-      sha256: "3fa83bc417e26f1d55814443a603747d48e3cdf55b2f4fea27dea8e9224dcefd"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.1.1"
-  crypto:
-    dependency: transitive
-    description:
-      name: crypto
-      sha256: "3ce628f3c6a7144be6c524dbb20ca5af52fa59c850c587bf5e52cd70ece8e7e8"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.1.5"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -90,10 +66,10 @@ packages:
     dependency: transitive
     description:
       name: flutter_inappwebview
-      sha256: a62542c9c42cb6f131ffa3493987e5e60de62aeb19fb392de23d9303b7f2a370
+      sha256: f73505c792cf083d5566e1a94002311be497d984b5607f25be36d685cf6361cf
       url: "https://pub.dev"
     source: hosted
-    version: "4.0.0+4"
+    version: "5.7.2+3"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -152,14 +128,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.0"
-  mime:
-    dependency: transitive
-    description:
-      name: mime
-      sha256: "5041f313f4e30fbd70dee7c0403785a4ee270f75830f590e5983960fddf743e4"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.9.7"
   path:
     dependency: transitive
     description:
@@ -229,14 +197,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.4.16"
-  typed_data:
-    dependency: transitive
-    description:
-      name: typed_data
-      sha256: facc8d6582f16042dd49f2463ff1bd6e2c9ef9f3d5da3d9b087e244a7b564b3c
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.3.2"
   url_launcher:
     dependency: "direct main"
     description:
@@ -301,14 +261,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.6"
-  uuid:
-    dependency: transitive
-    description:
-      name: uuid
-      sha256: bd96a5d86e807b44cac699f9735ef29d1e3354a96f4b2f7152000bae4c6d81b0
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.2.2"
   vector_math:
     dependency: transitive
     description:
@@ -317,14 +269,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
-  youtube_player_iframe:
+  youtube_player_flutter:
     dependency: "direct main"
     description:
-      name: youtube_player_iframe
-      sha256: "2da436fdbfa313a6d93e3e7200c6959b0af446ea6202fb50a8713f20c7c253e8"
+      name: youtube_player_flutter
+      sha256: "72d487e1a1b9155a2dc9d448c137380791101a0ff623723195275ac275ac6942"
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.0"
+    version: "8.1.2"
 sdks:
   dart: ">=2.19.6 <3.0.0"
   flutter: ">=3.3.0"

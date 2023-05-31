@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class JobTab extends StatefulWidget {
   @override
@@ -180,6 +181,13 @@ class _JobTabState extends State<JobTab> {
   }
 
   Widget _buildBlueBox1() {
+    YoutubePlayerController _controller = YoutubePlayerController(
+      initialVideoId: 'NMNvVtthPME',
+      flags: YoutubePlayerFlags(
+        autoPlay: true,
+        mute: false,
+      ),
+    );
     return Container(
       width: 400,
       height: 1500,
@@ -188,7 +196,7 @@ class _JobTabState extends State<JobTab> {
         borderRadius: BorderRadius.circular(5),
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center, // 가운데 정렬로 변경
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Image.asset(
             'images/ad_war.png',
@@ -211,9 +219,9 @@ class _JobTabState extends State<JobTab> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10), // 가로로 패딩 추가
+            padding: EdgeInsets.symmetric(horizontal: 10),
             child: Align(
-              alignment: Alignment.centerLeft, // 가운데 정렬
+              alignment: Alignment.centerLeft,
               child: Text(
                 '히어로는 ~',
                 style: TextStyle(
@@ -224,7 +232,10 @@ class _JobTabState extends State<JobTab> {
             ),
           ),
           SizedBox(height: 20),
-          // Add your video widget here
+          YoutubePlayer(
+            controller: _controller,
+            showVideoProgressIndicator: true,
+          ),
         ],
       ),
     );

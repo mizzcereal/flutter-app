@@ -24,118 +24,139 @@ class _JobTabState extends State<JobTab> {
         children: [
           Expanded(
             flex: 3,
-            child: Column(
-              children: <Widget>[
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      showBlueBox1 = !showBlueBox1;
-                    });
-                  },
-                  child: Container(
-                    width: 200,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      border: Border.all(
-                        color: Colors.black,
-                        width: 2,
-                      ),
-                      image: DecorationImage(
-                        image: AssetImage('images/ad_war.png'),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Text(
-                        '모험가 전사',
-                        style: TextStyle(
+            child: SingleChildScrollView(
+              child: Column(
+                children: <Widget>[
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        showBlueBox1 = !showBlueBox1;
+                      });
+                    },
+                    child: Container(
+                      width: 200,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        border: Border.all(
                           color: Colors.black,
+                          width: 2,
+                        ),
+                        image: DecorationImage(
+                          image: AssetImage('images/ad_war.png'),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          '모험가 전사',
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                SizedBox(height: 30),
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      showBlueBox2 = !showBlueBox2;
-                    });
-                  },
-                  child: Container(
-                    width: 200,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      border: Border.all(
-                        color: Colors.black,
-                        width: 2,
-                      ),
-                      image: DecorationImage(
-                        image: AssetImage('images/ad_war.png'),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Text(
-                        '모험가 전사',
-                        style: TextStyle(
+                  SizedBox(height: 30),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        showBlueBox2 = !showBlueBox2;
+                      });
+                    },
+                    child: Container(
+                      width: 200,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        border: Border.all(
                           color: Colors.black,
+                          width: 2,
+                        ),
+                        image: DecorationImage(
+                          image: AssetImage('images/ad_war.png'),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          '모험가 전사',
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                SizedBox(height: 30),
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      showBlueBox3 = !showBlueBox3;
-                    });
-                  },
-                  child: Container(
-                    width: 200,
-                    height: 100,
-                    color: Colors.red,
-                  ),
-                ),
-                SizedBox(height: 30),
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      showBlueBox4 = !showBlueBox4;
-                    });
-                  },
-                  child: Container(
-                    width: 200,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      border: Border.all(
-                        color: Colors.black,
-                        width: 2,
-                      ),
-                      image: DecorationImage(
-                        image: AssetImage('images/ad_war.png'),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Text(
-                        '모험가 전사',
-                        style: TextStyle(
+                  SizedBox(height: 30),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        showBlueBox3 = !showBlueBox3;
+                      });
+                    },
+                    child: Container(
+                      width: 200,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        border: Border.all(
                           color: Colors.black,
+                          width: 2,
+                        ),
+                        image: DecorationImage(
+                          image: AssetImage('images/ad_war.png'),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          '모험가 전사',
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                SizedBox(height: 30),
-              ],
+                  SizedBox(height: 30),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        showBlueBox4 = !showBlueBox4;
+                      });
+                    },
+                    child: Container(
+                      width: 200,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        border: Border.all(
+                          color: Colors.black,
+                          width: 2,
+                        ),
+                        image: DecorationImage(
+                          image: AssetImage('images/ad_war.png'),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          '모험가 전사',
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 30),
+                ],
+              ),
             ),
           ),
           Expanded(
@@ -161,20 +182,50 @@ class _JobTabState extends State<JobTab> {
   Widget _buildBlueBox1() {
     return Container(
       width: 400,
-      height: 600,
+      height: 1500,
       decoration: BoxDecoration(
-        color: Colors.blue,
+        color: const Color(0xff404040),
         borderRadius: BorderRadius.circular(5),
       ),
-      child: Align(
-        alignment: Alignment.center,
-        child: Text(
-          '첫 번째 파란색 박스',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 20,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center, // 가운데 정렬로 변경
+        children: [
+          Image.asset(
+            'images/ad_war.png',
+            width: 350,
+            height: 200,
+            fit: BoxFit.cover,
           ),
-        ),
+          SizedBox(height: 10),
+          Padding(
+            padding: EdgeInsets.only(left: 10),
+            child: Align(
+              alignment: Alignment.center,
+              child: Text(
+                '히어로',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10), // 가로로 패딩 추가
+            child: Align(
+              alignment: Alignment.centerLeft, // 가운데 정렬
+              child: Text(
+                '히어로는 ~',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                ),
+              ),
+            ),
+          ),
+          SizedBox(height: 20),
+          // Add your video widget here
+        ],
       ),
     );
   }
@@ -220,25 +271,25 @@ class _JobTabState extends State<JobTab> {
       ),
     );
   }
-}
 
-Widget _buildBlueBox4() {
-  return Container(
-    width: 400,
-    height: 600,
-    decoration: BoxDecoration(
-      color: Colors.black,
-      borderRadius: BorderRadius.circular(5),
-    ),
-    child: Align(
-      alignment: Alignment.center,
-      child: Text(
-        '세 번째 파란색 박스',
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 20,
+  Widget _buildBlueBox4() {
+    return Container(
+      width: 400,
+      height: 600,
+      decoration: BoxDecoration(
+        color: Colors.black,
+        borderRadius: BorderRadius.circular(5),
+      ),
+      child: Align(
+        alignment: Alignment.center,
+        child: Text(
+          '네 번째 파란색 박스',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 }

@@ -67,6 +67,7 @@ flutter:
     - images/ad_darknight.png
     - images/ad_paladin.png
     - images/ad_bishop.png
+    - images/ad_bowmaster.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

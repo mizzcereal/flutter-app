@@ -9,7 +9,7 @@ class _JobTabState extends State<JobTab> {
   bool showAdWarrior = false;
   bool showAdWizard = false;
   bool showAdBowman = false;
-  bool showBlueBox4 = false;
+  bool showAdThief = false;
 
   @override
   Widget build(BuildContext context) {
@@ -125,7 +125,7 @@ class _JobTabState extends State<JobTab> {
                 GestureDetector(
                   onTap: () {
                     setState(() {
-                      showBlueBox4 = !showBlueBox4;
+                      showAdThief = !showAdThief;
                     });
                   },
                   child: Container(
@@ -138,14 +138,14 @@ class _JobTabState extends State<JobTab> {
                         width: 2,
                       ),
                       image: DecorationImage(
-                        image: AssetImage('images/ad_war.png'),
+                        image: AssetImage('images/ad_nightlord.png'),
                         fit: BoxFit.cover,
                       ),
                     ),
                     child: Align(
                       alignment: Alignment.center,
                       child: Text(
-                        '모험가 전사',
+                        '모험가 도적',
                         style: TextStyle(
                           color: Colors.black,
                         ),
@@ -167,7 +167,7 @@ class _JobTabState extends State<JobTab> {
                   if (showAdWarrior) _adWarrior(),
                   if (showAdWizard) _adWizard(),
                   if (showAdBowman) _adBowman(),
-                  if (showBlueBox4) _buildBlueBox4(),
+                  if (showAdThief) _adThief(),
                 ],
               ),
             ),
@@ -240,7 +240,7 @@ class _JobTabState extends State<JobTab> {
     );
   }
 
-  Widget _buildBlueBox4() {
+  Widget _adThief() {
     return Container(
       width: 400,
       height: 600,

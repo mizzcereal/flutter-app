@@ -4,15 +4,14 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'job.dart'; // job_tab.dart 파일을 임포트합니다.
 import 'commu.dart';
+import 'homepage.dart'; // Import the homepage.dart file
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-
   const MyApp({Key? key}) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +71,6 @@ class _MyAppBody extends StatefulWidget {
 }
 
 class _MyAppBodyState extends State<_MyAppBody> {
-
   @override
   Widget build(BuildContext context) {
     return NestedScrollView(
@@ -81,39 +79,7 @@ class _MyAppBodyState extends State<_MyAppBody> {
       },
       body: TabBarView(
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  '컴터랑 두개 왤캐 어렵지!!!',
-                  style: TextStyle(fontSize: 24),
-                ),
-                SizedBox(height: 20),
-                InkWell(
-                  onTap: () {
-                    launch('https://maplestory.nexon.com/Home/Main');
-                  },
-                  child: Container(
-                    padding:
-                    EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: Colors.blue,
-                    ),
-                    child: Text(
-                      '다른 사이트로 이동',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
+          HomePage(),
           ListView(
             children: [
               ListTile(
@@ -131,9 +97,15 @@ class _MyAppBodyState extends State<_MyAppBody> {
             ],
           ),
           JobTab(),
-          CommunityPage(), // 유튜브 동영상 추가
+          CommunityPage(),
         ],
       ),
     );
   }
 }
+
+
+
+
+
+

@@ -3,13 +3,16 @@ import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'job.dart'; // job_tab.dart 파일을 임포트합니다.
+import 'commu.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+
   const MyApp({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -128,33 +131,9 @@ class _MyAppBodyState extends State<_MyAppBody> {
             ],
           ),
           JobTab(),
-          _buildYoutubeVideo(), // 유튜브 동영상 추가
+          CommunityPage(), // 유튜브 동영상 추가
         ],
       ),
-    );
-  }
-
-  Widget _buildYoutubeVideo() {
-    return YoutubePlayer(
-      controller: YoutubePlayerController(
-        initialVideoId: 'O4pNIOPMfVk', // 동영상 ID를 입력합니다.
-        flags: YoutubePlayerFlags(
-          autoPlay: true,
-          mute: false,
-        ),
-      ),
-      showVideoProgressIndicator: true,
-      progressIndicatorColor: Colors.blueAccent,
-      progressColors: ProgressBarColors(
-        playedColor: Colors.blueAccent,
-        handleColor: Colors.blueAccent,
-      ),
-      onReady: () {
-        // 동영상이 준비되었을 때 실행할 작업을 추가할 수 있습니다.
-      },
-      onEnded: (data) {
-        // 동영상 재생이 끝났을 때 실행할 작업을 추가할 수 있습니다.
-      },
     );
   }
 }

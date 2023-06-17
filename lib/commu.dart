@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
+import 'package:intl/intl.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,6 +10,7 @@ void main() {
 class Post {
   String title;
   String content;
+
 
   Post({required this.title, required this.content});
 }
@@ -31,9 +33,13 @@ class CommunityPage extends StatefulWidget {
   _CommunityPageState createState() => _CommunityPageState();
 }
 
-class _CommunityPageState extends State<CommunityPage> {
+class _CommunityPageState extends State<CommunityPage> with AutomaticKeepAliveClientMixin {
   List<Post> posts = [];
   late Database _database;
+  ScrollController _scrollController = ScrollController();
+
+  @override
+  bool get wantKeepAlive => true;
 
   @override
   void initState() {
@@ -64,7 +70,7 @@ class _CommunityPageState extends State<CommunityPage> {
           content: maps[index]['content'],
         ),
       );
-      posts.sort((a, b) => b.title.compareTo(a.title)); // 최신 글 순으로 정렬
+      posts.sort((a, b) => b.title.compareTo(a.title));
     });
   }
 
@@ -78,7 +84,7 @@ class _CommunityPageState extends State<CommunityPage> {
       conflictAlgorithm: ConflictAlgorithm.replace,
     );
     setState(() {
-      posts.insert(0, post); // 새로운 글을 리스트의 맨 앞에 추가
+      posts.insert(0, post);
     });
   }
 
@@ -127,31 +133,26 @@ class _CommunityPageState extends State<CommunityPage> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context); // AutomaticKeepAliveClientMixin을 사용하기 위해 super.build(context) 호출
+
     return Scaffold(
       appBar: AppBar(
         title: Text('커뮤니티 게시판'),
       ),
       body: ListView.builder(
+        shrinkWrap: true,
         itemCount: posts.length,
         itemBuilder: (context, index) {
           return PostItem(post: posts[index]);
         },
+        controller: _scrollController,
       ),
-      floatingActionButton: ElevatedButton(
+      floatingActionButton: FloatingActionButton(
         onPressed: () {
           _showDialog(context);
         },
-        style: ElevatedButton.styleFrom(
-          shape: StadiumBorder(),
-          padding: EdgeInsets.symmetric(vertical: 16, horizontal: 24),
-          primary: Colors.blue,
-        ),
-        child: Text(
-          '게시글 작성',
-          style: TextStyle(fontSize: 16),
-        ),
+        child: Icon(Icons.add),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }

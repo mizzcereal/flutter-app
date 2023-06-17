@@ -47,10 +47,11 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       posts = List.generate(
         maps.length.clamp(0, 3), // 최신 3개의 글만 보이도록 제한
-            (index) => Post(
-          title: maps[index]['title'],
-          content: maps[index]['content'],
-        ),
+            (index) =>
+            Post(
+              title: maps[index]['title'],
+              content: maps[index]['content'],
+            ),
       );
     });
   }
@@ -63,6 +64,14 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Text(
+              '커뮤니티 최신글', // Add the title here
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 16),
             Expanded(
               child: ListView.builder(
                 shrinkWrap: true,

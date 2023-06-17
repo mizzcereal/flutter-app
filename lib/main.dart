@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'job.dart'; // job_tab.dart 파일을 임포트합니다.
 import 'commu.dart';
 import 'homepage.dart'; // Import the homepage.dart file
+import 'update.dart';
 
 void main() {
   runApp(const MyApp());
@@ -78,22 +79,7 @@ class _MyAppBodyState extends State<_MyAppBody> {
       body: TabBarView(
         children: [
           HomePage(),
-          ListView(
-            children: [
-              ListTile(
-                title: Text('공지사항 500'),
-                subtitle: Text('2023-05-01'),
-              ),
-              ListTile(
-                title: Text('공지사항 2'),
-                subtitle: Text('2023-05-02'),
-              ),
-              ListTile(
-                title: Text('공지사항 4'),
-                subtitle: Text('2023-05-03'),
-              ),
-            ],
-          ),
+          UpdateTab(),
           JobTab(),
           CommunityPage(),
         ],

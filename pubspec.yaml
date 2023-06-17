@@ -78,6 +78,7 @@ flutter:
     - images/background5.png
     - images/commubackground.png
     - images/update.png
+    - images/jobtab.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

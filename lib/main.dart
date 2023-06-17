@@ -106,6 +106,8 @@ class _MyAppBodyState extends State<_MyAppBody> {
         return <Widget>[];
       },
       body: TabBarView(
+        physics: NeverScrollableScrollPhysics(), // 좌우 슬라이드 비활성화
+        controller: DefaultTabController.of(context), // 현재 선택된 탭 유지
         children: [
           HomePage(),
           UpdateTab(),

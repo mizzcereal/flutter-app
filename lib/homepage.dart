@@ -124,7 +124,7 @@ class _HomePageState extends State<HomePage> {
                       color: Colors.blue,
                     ),
                     child: Text(
-                      '다른 사이트로 이동',
+                      '메이플스토리 공식 홈페이지로 이동',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,

@@ -74,6 +74,7 @@ flutter:
     - images/ad_captin.png
     - images/hero.png
     - images/background3.png
+    - images/commubackground.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

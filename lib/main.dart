@@ -25,34 +25,63 @@ class MyApp extends StatelessWidget {
         length: 4,
         child: Scaffold(
           appBar: AppBar(
-            bottom: TabBar(
-              tabs: [
-                Tab(
-                  icon: Icon(Icons.home),
-                  text: "홈페이지",
-                ),
-                Tab(
-                  icon: Icon(Icons.assignment_turned_in),
-                  text: "공지사항",
-                ),
-                Tab(
-                  icon: Image.asset(
-                    'images/icon2.png',
-                    width: 45,
-                    height: 25,
+            backgroundColor: Colors.white, // N.G 바의 배경색
+            bottom: PreferredSize(
+              preferredSize: Size.fromHeight(48.0), // TabBar의 높이
+              child: Column(
+                children: [
+                  Container(
+                    height: 1.0,
+                    color: Colors.black, // 검은 선의 색상
                   ),
-                  text: "직업소개",
-                ),
-                Tab(
-                  icon: Icon(Icons.question_answer),
-                  text: "커뮤니티",
-                ),
-              ],
-              indicatorColor: Colors.transparent,
-              unselectedLabelColor: Color(0xFFDDDDDD),
-              labelColor: Colors.black,
+                  TabBar(
+                    indicatorColor: Colors.black, // 선택된 탭의 인디케이터 색상
+                    unselectedLabelColor: Colors.black, // 탭의 비선택 상태 색상
+                    labelColor: Colors.blue, // 선택된 탭 텍스트 색상
+                    tabs: [
+                      Tab(
+                        child: Text(
+                          '홈페이지',
+                          style: TextStyle(
+                            color: Colors.black, // 탭 텍스트의 비선택 상태 색상
+                          ),
+                        ),
+                      ),
+                      Tab(
+                        child: Text(
+                          '공지사항',
+                          style: TextStyle(
+                            color: Colors.black, // 탭 텍스트의 비선택 상태 색상
+                          ),
+                        ),
+                      ),
+                      Tab(
+                        child: Text(
+                          '직업소개',
+                          style: TextStyle(
+                            color: Colors.black, // 탭 텍스트의 비선택 상태 색상
+                          ),
+                        ),
+                      ),
+                      Tab(
+                        child: Text(
+                          '커뮤니티',
+                          style: TextStyle(
+                            color: Colors.black, // 탭 텍스트의 비선택 상태 색상
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
-            title: Text("N.G"),
+            title: Text(
+              'N.G',
+              style: TextStyle(
+                color: Colors.blue, // N.G 타이틀 색상
+              ),
+            ),
             centerTitle: true,
           ),
           body: _MyAppBody(),

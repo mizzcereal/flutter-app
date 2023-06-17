@@ -1,40 +1,54 @@
 import 'package:flutter/material.dart';
 import 'adjob.dart';
+import 'warrior.dart';
 
 class JobTab extends StatefulWidget {
   @override
   _JobTabState createState() => _JobTabState();
+
 }
 
 class _JobTabState extends State<JobTab> {
   bool showAdWarrior = false;
-  bool showAdwizard = false;
+  bool showAdWizard = false;
   bool showAdBowman = false;
   bool showAdThief = false;
   bool showAdPirate = false;
 
+  void navigateToAdHeroPage() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => WarriorPage()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        setState(() {
-          showAdWarrior = !showAdWarrior;
-        });
-      },
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Expanded(
-            flex: 3,
-            child: SingleChildScrollView(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('공지사항'),
+        backgroundColor: Colors.lightBlueAccent,
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              height: 200,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('images/update.png'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            GestureDetector(
+              onTap: navigateToAdHeroPage,
               child: Column(
-                children: <Widget>[
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SizedBox(height: 30),
                   GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        showAdWarrior = !showAdWarrior;
-                      });
-                    },
+                    onTap: navigateToAdHeroPage,
                     child: Container(
                       width: 150,
                       height: 100,
@@ -64,7 +78,7 @@ class _JobTabState extends State<JobTab> {
                   GestureDetector(
                     onTap: () {
                       setState(() {
-                        showAdwizard = !showAdwizard;
+                        showAdWizard = !showAdWizard;
                       });
                     },
                     child: Container(
@@ -189,27 +203,24 @@ class _JobTabState extends State<JobTab> {
                     ),
                   ),
                   SizedBox(height: 30),
+                  SingleChildScrollView(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        if (showAdWarrior) AdJobWidgets.adWarrior(),
+                        if (showAdWizard) AdJobWidgets.adWizard(),
+                        if (showAdBowman) AdJobWidgets.adBowman(),
+                        if (showAdThief) AdJobWidgets.adThief(),
+                        if (showAdPirate) AdJobWidgets.adPirate(),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
-          ),
-          Expanded(
-            flex: 3,
-            child: SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  if (showAdWarrior) AdJobWidgets.adWarrior(),
-                  if (showAdwizard) AdJobWidgets.adWizard(),
-                  if (showAdBowman) AdJobWidgets.adBowman(),
-                  if (showAdThief) AdJobWidgets.adThief(),
-                  if (showAdPirate) AdJobWidgets.adPirate(),
-                ],
-              ),
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

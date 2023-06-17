@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'job.dart'; // job_tab.dart 파일을 임포트합니다.
 import 'commu.dart';
 import 'homepage.dart'; // Import the homepage.dart file

@@ -64,7 +64,6 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - images/icon2.png
     - images/ad_war.png
     - images/ad_darknight.png
     - images/ad_paladin.png
@@ -73,12 +72,15 @@ flutter:
     - images/ad_nightlord.png
     - images/ad_captin.png
     - images/hero.png
-    - images/background3.png
-    - images/background4.png
-    - images/background5.png
+    - images/homepage.png
     - images/commubackground.png
     - images/update.png
     - images/jobtab.png
+    - images/warriorjob.png
+    - images/magicianjob.png
+    - images/bowmanjob.png
+    - images/thiefjob.png
+    - images/piratejob.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'adjob.dart';
 import 'warrior.dart';
 import 'magicion.dart';
 import 'bowman.dart';
@@ -18,28 +17,24 @@ class _JobTabState extends State<JobTab> {
       MaterialPageRoute(builder: (context) => WarriorPage()),
     );
   }
-
   void navigateToAdWizardPage(BuildContext context) {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => MagicianPage()),
     );
   }
-
   void navigateToAdBowmanPage(BuildContext context) {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => BowmanPage()),
     );
   }
-
   void navigateToAdThiefPage(BuildContext context) {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => ThiefPage()),
     );
   }
-
   void navigateToAdPiratePage(BuildContext context) {
     Navigator.push(
       context,
@@ -81,18 +76,30 @@ class _JobTabState extends State<JobTab> {
                       width: 2,
                     ),
                     image: DecorationImage(
-                      image: AssetImage('images/ad_war.png'),
+                      image: AssetImage('images/warriorjob.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      '모험가 전사',
-                      style: TextStyle(
-                        color: Colors.black,
+                  child: Stack(
+                    children: [
+                      Align(
+                        alignment: Alignment.bottomRight,
+                        child: Container(
+                          margin: EdgeInsets.all(10.0),
+                          padding: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                            color: Colors.grey.withOpacity(0.7), // 회색 + 70% 불투명도
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          child: Text(
+                            '전사',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
                       ),
-                    ),
+                    ],
                   ),
                 ),
               ),
@@ -112,18 +119,30 @@ class _JobTabState extends State<JobTab> {
                       width: 2,
                     ),
                     image: DecorationImage(
-                      image: AssetImage('images/ad_bishop.png'),
+                      image: AssetImage('images/magicianjob.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      '모험가 마법사',
-                      style: TextStyle(
-                        color: Colors.black,
+                  child: Stack(
+                    children: [
+                      Align(
+                        alignment: Alignment.bottomRight,
+                        child: Container(
+                          margin: EdgeInsets.all(10.0),
+                          padding: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                            color: Colors.grey.withOpacity(0.7), // 회색 + 70% 불투명도
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          child: Text(
+                            '마법사',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
                       ),
-                    ),
+                    ],
                   ),
                 ),
               ),
@@ -143,18 +162,30 @@ class _JobTabState extends State<JobTab> {
                       width: 2,
                     ),
                     image: DecorationImage(
-                      image: AssetImage('images/ad_bowmaster.png'),
+                      image: AssetImage('images/bowmanjob.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      '모험가 궁수',
-                      style: TextStyle(
-                        color: Colors.black,
+                  child: Stack(
+                    children: [
+                      Align(
+                        alignment: Alignment.bottomRight,
+                        child: Container(
+                          margin: EdgeInsets.all(10.0),
+                          padding: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                            color: Colors.grey.withOpacity(0.7), // 회색 + 70% 불투명도
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          child: Text(
+                            '궁수',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
                       ),
-                    ),
+                    ],
                   ),
                 ),
               ),
@@ -174,18 +205,30 @@ class _JobTabState extends State<JobTab> {
                       width: 2,
                     ),
                     image: DecorationImage(
-                      image: AssetImage('images/ad_nightlord.png'),
+                      image: AssetImage('images/thiefjob.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      '모험가 도적',
-                      style: TextStyle(
-                        color: Colors.black,
+                  child: Stack(
+                    children: [
+                      Align(
+                        alignment: Alignment.bottomRight,
+                        child: Container(
+                          margin: EdgeInsets.all(10.0),
+                          padding: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                            color: Colors.grey.withOpacity(0.7), // 회색 + 70% 불투명도
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          child: Text(
+                            '도적',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
                       ),
-                    ),
+                    ],
                   ),
                 ),
               ),
@@ -205,18 +248,30 @@ class _JobTabState extends State<JobTab> {
                       width: 2,
                     ),
                     image: DecorationImage(
-                      image: AssetImage('images/ad_captin.png'),
+                      image: AssetImage('images/piratejob.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      '모험가 해적',
-                      style: TextStyle(
-                        color: Colors.black,
+                  child: Stack(
+                    children: [
+                      Align(
+                        alignment: Alignment.bottomRight,
+                        child: Container(
+                          margin: EdgeInsets.all(10.0),
+                          padding: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                            color: Colors.grey.withOpacity(0.7), // 회색 + 70% 불투명도
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          child: Text(
+                            '해적',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
                       ),
-                    ),
+                    ],
                   ),
                 ),
               ),

@@ -17,7 +17,7 @@ class WarriorPage extends StatelessWidget {
     ),
   );
   YoutubePlayerController _controller3 = YoutubePlayerController(
-    initialVideoId: 'VefO2hF7YOU',
+    initialVideoId: 'yNJM2-1z91g',
     flags: YoutubePlayerFlags(
       autoPlay: false,
       mute: false,
@@ -34,7 +34,7 @@ class WarriorPage extends StatelessWidget {
       body: SingleChildScrollView(
         child : Container(
         width: 400,
-        height: 2400,
+        height: 2700,
         decoration: BoxDecoration(
           color: const Color(0xff404040),
           borderRadius: BorderRadius.circular(5),
@@ -43,9 +43,9 @@ class WarriorPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
-              'images/ad_war.png',
-              width: 350,
-              height: 200,
+              'images/hero.png',
+              width: 400,
+              height: 300,
               fit: BoxFit.cover,
             ),
             SizedBox(height: 10),
@@ -116,9 +116,9 @@ class WarriorPage extends StatelessWidget {
             ),
             SizedBox(height: 30),
             Image.asset(
-              'images/ad_darknight.png',
-              width: 200,
-              height: 200,
+              'images/darknight.png',
+              width: 400,
+              height: 300,
               fit: BoxFit.cover,
             ),
             SizedBox(height: 10),
@@ -189,9 +189,9 @@ class WarriorPage extends StatelessWidget {
             ),
             SizedBox(height: 30),
             Image.asset(
-              'images/ad_paladin.png',
-              width: 350,
-              height: 200,
+              'images/paladin.png',
+              width: 400,
+              height: 300,
               fit: BoxFit.cover,
             ),
             SizedBox(height: 10),

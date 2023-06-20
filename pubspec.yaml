@@ -69,7 +69,9 @@ flutter:
     - images/paladin.png
     - images/buldok.png
     - images/bishop.png
-    - images/ad_bowmaster.png
+    - images/bowmaster.png
+    - images/sniper.png
+    - images/pathfinder.png
     - images/ad_nightlord.png
     - images/ad_captin.png
     - images/hero.png

@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
           title: maps[index]['title'],
           content: maps[index]['content'],
         ),
-      ).take(20).toList();
+      ).take(2).toList();
     });
   }
 
@@ -87,7 +87,7 @@ class _HomePageState extends State<HomePage> {
           ListView.builder(
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
-            itemCount: 10,
+            itemCount: posts.length,
             itemBuilder: (context, index) {
               return Container(
                 decoration: BoxDecoration(

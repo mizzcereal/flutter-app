@@ -176,11 +176,13 @@ class _CommunityPageState extends State<CommunityPage> with AutomaticKeepAliveCl
             ),
           ],
         ),
-        floatingActionButton: FloatingActionButton(
+        floatingActionButton: FloatingActionButton.extended(
           onPressed: () {
             _showDialog(context);
           },
-          child: Icon(Icons.add),
+          icon: Icon(Icons.edit),
+          label: Text('게시글 작성'),
+          backgroundColor: Colors.purple,
         ),
       ),
     );

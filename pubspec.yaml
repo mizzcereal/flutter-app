@@ -72,8 +72,12 @@ flutter:
     - images/bowmaster.png
     - images/sniper.png
     - images/pathfinder.png
-    - images/ad_nightlord.png
-    - images/ad_captin.png
+    - images/nightlord.png
+    - images/shadower.png
+    - images/duelblade.png
+    - images/captin.png
+    - images/viper.png
+    - images/cannonsuter.png
     - images/hero.png
     - images/homepage.png
     - images/commubackground.png

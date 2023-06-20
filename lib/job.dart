@@ -276,7 +276,7 @@ class _JobTabState extends State<JobTab> {
                 ),
               ),
             ),
-            SizedBox(height: 300),
+            SizedBox(height: 500),
           ],
         ),
       ),

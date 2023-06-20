@@ -59,7 +59,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('홈페이지'),
+        title: Text('메인화면'),
         backgroundColor: Colors.greenAccent,
       ),
       body: ListView(

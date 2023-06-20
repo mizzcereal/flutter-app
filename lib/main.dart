@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
                     tabs: [
                       Tab(
                         child: Text(
-                          '홈페이지',
+                          '메인화면',
                           style: TextStyle(
                             color: Colors.black, // 탭 텍스트의 비선택 상태 색상
                           ),
